@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">ControlAutomovil</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Control del Automovil</string>
+    <string name="modo_manual">Modo Manual</string>
+    <string name="modo_autom_tico">Modo Automático</string>
+    <string name="abre_pinza">Abre Pinza</string>
+    <string name="subir_pinza">Subir Pinza</string>
+    <string name="bajar_pinza">Bajar Pinza</string>
+    <string name="cerrar_pinza">Cerrar Pinza</string>
+    <string name="stop">STOP</string>
+    <string name="adelante_">Adelante!</string>
+    <string name="atras_">Atras!</string>
+    <string name="estado_del_giroscopio">Estado del giroscopio</string>
+    <string name="opciones">Opciones</string>
+    <string name="bluetooth_off">Bluetooth: OFF</string>
+    <string name="dispositivos_previamente_conectados">Dispositivos Previamente Conectados: </string>
+    <string name="no_hay_dispositivos_previos">No hay Dispositivos Previos</string>
+    <string name="buscar_dispositivos">Buscar Dispositivos</string>
+
+</resources>
