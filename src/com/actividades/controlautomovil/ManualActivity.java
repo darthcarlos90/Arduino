@@ -1,26 +1,27 @@
 package com.actividades.controlautomovil;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
-import android.app.Activity;
-import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ManualActivity extends Activity implements SensorEventListener {
+public class ManualActivity extends BluetoothActivity implements
+		SensorEventListener {
 
 	private float mLastX, mLastY, mLastZ;
 	private boolean mInitialized;
 	private SensorManager mSensorManager;
 	private Sensor mAccelerometer;
+	private BluetoothManagerApplication bma;
+	private Button adelante;
 
 	private final float NOISE = (float) 2.0;
 
@@ -28,43 +29,50 @@ public class ManualActivity extends Activity implements SensorEventListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.manual);
+		setupViews();
+
+	}
+
+	private void setupViews() {
+		bma = getApplicationManager();
+		adelante = (Button)findViewById(R.id.adelante_btn);
+		adelante.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				try {
+					bma.getSocket().getOutputStream().write('A');
+				} catch (IOException e) {
+					showMessage("No se pudo mover hacia adelante :(");
+					e.printStackTrace();
+				}
+				
+			}
+		});
+		
+	}
+
+	public void setupSensors() {
 		mInitialized = false;
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		mAccelerometer = mSensorManager
 				.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 		mSensorManager.registerListener(this, mAccelerometer,
 				SensorManager.SENSOR_DELAY_NORMAL);
-
 	}
-	
-	public void boton(){
-		OutputStream mmOutputStream = null;
-		BluetoothSocket mmSocket;
-		mmSocket = device
-				.createRfcommSocketToServiceRecord(uuid);
-		try {
-			mmOutputStream = mmSocket.getOutputStream();
-		} catch (IOException e) {
-			showMessage("No funciono!");
-			e.printStackTrace();
-		}
-		try {
-			InputStream mmInputStream = mmSocket.getInputStream();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-		String msg = "A";
-		msg += "\n";
-		try {
-			showMessage("Se mando mensaje!");
-			mmOutputStream.write(msg.getBytes());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	/*
+	 * public void boton(){ OutputStream mmOutputStream = null; BluetoothSocket
+	 * mmSocket; BluetoothDevice device; /*mmSocket = device
+	 * .createRfcommSocketToServiceRecord(uuid); try { //mmOutputStream =
+	 * mmSocket.getOutputStream(); } catch (IOException e) {
+	 * showMessage("No funciono!"); e.printStackTrace(); } try { InputStream
+	 * mmInputStream = mmSocket.getInputStream(); } catch (IOException e) { //
+	 * TODO Auto-generated catch block e.printStackTrace(); }
+	 * 
+	 * String msg = "A"; msg += "\n"; try { showMessage("Se mando mensaje!");
+	 * mmOutputStream.write(msg.getBytes()); } catch (IOException e) { // TODO
+	 * Auto-generated catch block e.printStackTrace(); } }
+	 */
 
 	protected void onResume() {
 		super.onResume();
@@ -76,7 +84,7 @@ public class ManualActivity extends Activity implements SensorEventListener {
 		super.onPause();
 		mSensorManager.unregisterListener(this);
 	}
-	
+
 	public void showMessage(String message) {
 		Context context = getApplicationContext();
 		int duration = Toast.LENGTH_SHORT;

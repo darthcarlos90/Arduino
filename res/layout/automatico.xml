@@ -1,28 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <Button
-        android:id="@+id/boton_manual"
+        android:id="@+id/ejecutar_rutina_default"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:onClick="manual"
-        android:padding="@dimen/padding_medium"
-        android:text="@string/modo_manual"
-        tools:context=".MainActivity" />
+        android:text="@string/ejecutar_rutina_por_default" >
+    </Button>
 
     <Button
-        android:id="@+id/boton_auto"
+        android:id="@+id/add_rutina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/boton_manual"
+        android:layout_below="@id/ejecutar_rutina_default"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/modo_autom_tico"
-        android:onClick="automatico"
-        tools:context=".MainActivity" />
+        android:text="@string/nueva_rutina" />
+
+    <ListView
+        android:id="@+id/rutinas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_rutina" >
+    </ListView>
 
 </RelativeLayout>

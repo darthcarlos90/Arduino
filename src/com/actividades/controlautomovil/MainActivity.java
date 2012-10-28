@@ -1,40 +1,48 @@
 package com.actividades.controlautomovil;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends Activity {
-	
-	String uuid;
+public class MainActivity extends BluetoothActivity {
+
+	private BluetoothManagerApplication bma;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		try{
-			Intent intent = getIntent();
-			uuid = intent.getExtras().getString("UUID");
-		}catch(Exception e){
-			uuid = null;
+		setup();
+	}
+
+	private void setup() {
+		bma = getApplicationManager();
+	}
+
+	public void manual(View v) {
+		if (bma.connectionCreated() == false) {
+			showMessage("Necesitas Empezar una conexión primero.");
+			Intent intent = new Intent(this, CreateConnectionActivity.class);
+			startActivity(intent);
+		} else {
+			Intent intent = new Intent(this, ManualActivity.class);
+			startActivity(intent);
 		}
+
 	}
-	
-	public void manual(View v){
-		Intent intent = new Intent(this, ManualActivity.class);
-		intent.putExtra("UUID", uuid);
-		startActivity(intent);
-		
-	}
-	
-	public void automatico (View v){
-		Intent intent = new Intent(this, CirculoPruebaActivity.class);
-		intent.putExtra("UUID", uuid);
-		startActivity(intent);
+
+	public void automatico(View v) {
+		if (bma.connectionCreated() == false) {
+			showMessage("Necesitas Empezar una conexión primero.");
+			Intent intent = new Intent(this, CreateConnectionActivity.class);
+			startActivity(intent);
+		} else {
+			Intent intent = new Intent(this, AutomaticoActivity.class);
+			startActivity(intent);
+		}
 	}
 
 	@Override
@@ -46,16 +54,12 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()){
+		switch (item.getItemId()) {
 		case R.id.menu_settings:
-			Intent intent = new Intent(this, BluetoothActivity.class);
+			Intent intent = new Intent(this, CreateConnectionActivity.class);
 			startActivity(intent);
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-	
-	
-	
 
 }

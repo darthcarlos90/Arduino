@@ -20,33 +20,36 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int abre_pinza_btn=0x7f080008;
-        public static final int adelante_btn=0x7f080011;
-        public static final int atras_btn=0x7f080012;
-        public static final int baja_pinza_btn=0x7f080009;
+        public static final int abre_pinza_btn=0x7f08000a;
+        public static final int add_rutina=0x7f080003;
+        public static final int adelante_btn=0x7f080013;
+        public static final int atras_btn=0x7f080014;
+        public static final int baja_pinza_btn=0x7f08000b;
         public static final int boton_auto=0x7f080001;
         public static final int boton_manual=0x7f080000;
-        public static final int canvas_view=0x7f080013;
-        public static final int cerrar_pinza_btn=0x7f08000b;
-        public static final int controles_movimiento=0x7f080010;
-        public static final int controles_pinza=0x7f080007;
-        public static final int dispositivosEncontrados_lv=0x7f080006;
-        public static final int dispositivosPrevios_txv=0x7f080003;
-        public static final int dispositivosPrevios_view=0x7f080004;
-        public static final int empezarBusqueda=0x7f080005;
-        public static final int estadoX=0x7f08000d;
-        public static final int estadoY=0x7f08000e;
-        public static final int estadoZ=0x7f08000f;
-        public static final int menu_settings=0x7f080014;
-        public static final int status_bluetooth=0x7f080002;
-        public static final int stop_btn=0x7f08000c;
-        public static final int subir_pinza_btn=0x7f08000a;
+        public static final int canvas_view=0x7f080015;
+        public static final int cerrar_pinza_btn=0x7f08000d;
+        public static final int controles_movimiento=0x7f080012;
+        public static final int controles_pinza=0x7f080009;
+        public static final int dispositivosEncontrados_lv=0x7f080008;
+        public static final int dispositivosPrevios_txv=0x7f080005;
+        public static final int dispositivosPrevios_view=0x7f080006;
+        public static final int ejecutar_rutina_default=0x7f080002;
+        public static final int empezarBusqueda=0x7f080007;
+        public static final int estadoX=0x7f08000f;
+        public static final int estadoY=0x7f080010;
+        public static final int estadoZ=0x7f080011;
+        public static final int menu_settings=0x7f080016;
+        public static final int rutinas=0x7f080004;
+        public static final int stop_btn=0x7f08000e;
+        public static final int subir_pinza_btn=0x7f08000c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int bluetooth_layout=0x7f030001;
-        public static final int manual=0x7f030002;
-        public static final int pruebacirculo=0x7f030003;
+        public static final int automatico=0x7f030001;
+        public static final int bluetooth_layout=0x7f030002;
+        public static final int manual=0x7f030003;
+        public static final int pruebacirculo=0x7f030004;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
@@ -61,12 +64,14 @@ public final class R {
         public static final int buscar_dispositivos=0x7f050012;
         public static final int cerrar_pinza=0x7f050009;
         public static final int dispositivos_previamente_conectados=0x7f050010;
+        public static final int ejecutar_rutina_por_default=0x7f050013;
         public static final int estado_del_giroscopio=0x7f05000d;
         public static final int hello_world=0x7f050001;
         public static final int menu_settings=0x7f050002;
         public static final int modo_autom_tico=0x7f050005;
         public static final int modo_manual=0x7f050004;
         public static final int no_hay_dispositivos_previos=0x7f050011;
+        public static final int nueva_rutina=0x7f050014;
         public static final int opciones=0x7f05000e;
         public static final int stop=0x7f05000a;
         public static final int subir_pinza=0x7f050007;
