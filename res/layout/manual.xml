@@ -5,51 +5,13 @@
     android:gravity="center_vertical"
     android:orientation="horizontal" >
 
-    <RelativeLayout
-        android:id="@+id/controles_pinza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
-
-        <Button
-            android:id="@+id/abre_pinza_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/abre_pinza" />
-
-        <Button
-            android:id="@+id/baja_pinza_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/abre_pinza_btn"
-            android:text="@string/bajar_pinza" />
-
-        <Button
-            android:id="@+id/subir_pinza_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/abre_pinza_btn"
-            android:layout_toRightOf="@id/baja_pinza_btn"
-            android:text="@string/subir_pinza" />
-
-        <Button
-            android:id="@+id/cerrar_pinza_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/subir_pinza_btn"
-            android:layout_centerHorizontal="true"
-            android:text="@string/cerrar_pinza" />
-    </RelativeLayout>
-
     <Button
         android:id="@+id/stop_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/stop" />
+        android:background="@drawable/stop" />
 
     <TextView
         android:id="@+id/estadoX"
@@ -58,6 +20,7 @@
         android:layout_below="@id/stop_btn"
         android:layout_centerHorizontal="true"
         android:text="@string/estado_del_giroscopio" />
+
     <TextView
         android:id="@+id/estadoY"
         android:layout_width="wrap_content"
@@ -65,38 +28,90 @@
         android:layout_below="@id/estadoX"
         android:layout_centerHorizontal="true"
         android:text="@string/estado_del_giroscopio" />
-       <TextView
+
+    <TextView
         android:id="@+id/estadoZ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/estadoY"
         android:layout_centerHorizontal="true"
         android:text="@string/estado_del_giroscopio" />
-        
-        
 
     <RelativeLayout
         android:id="@+id/controles_movimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true" >
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
 
         <Button
             android:id="@+id/adelante_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_centerHorizontal="true"
-            android:text="@string/adelante_" />
+            android:background="@drawable/adelate" />
+
+        <Button
+            android:id="@+id/izq_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/adelante_btn"
+            android:background="@drawable/izquierda" />
+
+        <Button
+            android:id="@+id/der_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/adelante_btn"
+            android:layout_toRightOf="@id/izq_btn"
+            android:background="@drawable/derecha" />
 
         <Button
             android:id="@+id/atras_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/adelante_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/izq_btn"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/atras_" />
+            android:background="@drawable/atras" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/controles_pinza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <Button
+            android:id="@+id/abre_pinza_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/abrirpinza" />
+
+        <Button
+            android:id="@+id/cerrar_pinza_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/abre_pinza_btn"
+            android:background="@drawable/cerrarpinza" />
+
+        <Button
+            android:id="@+id/baja_pinza_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/abre_pinza_btn"
+            android:background="@drawable/bajarpinza" />
+
+        <Button
+            android:id="@+id/subir_pinza_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/abre_pinza_btn"
+            android:layout_toRightOf="@id/baja_pinza_btn"
+            android:background="@drawable/subirpinza" />
     </RelativeLayout>
 
 </RelativeLayout>

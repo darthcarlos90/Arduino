@@ -22,6 +22,7 @@ public class ManualActivity extends BluetoothActivity implements
 	private Sensor mAccelerometer;
 	private BluetoothManagerApplication bma;
 	private Button adelante;
+	private Button atras;
 
 	private final float NOISE = (float) 2.0;
 
@@ -49,6 +50,22 @@ public class ManualActivity extends BluetoothActivity implements
 			}
 		});
 		
+		atras = (Button) findViewById(R.id.atras_btn);
+		atras.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				try {
+					bma.getSocket().getOutputStream().write('B');
+				} catch (IOException e) {
+					showMessage("No se pudo Mover hacia atras! :(");
+					e.printStackTrace();
+				}
+				
+			}
+		});
+		
+		
+		
 	}
 
 	public void setupSensors() {
@@ -74,11 +91,6 @@ public class ManualActivity extends BluetoothActivity implements
 	 * Auto-generated catch block e.printStackTrace(); } }
 	 */
 
-	protected void onResume() {
-		super.onResume();
-		mSensorManager.registerListener(this, mAccelerometer,
-				SensorManager.SENSOR_DELAY_NORMAL);
-	}
 
 	protected void onPause() {
 		super.onPause();
