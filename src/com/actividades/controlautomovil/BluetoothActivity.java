@@ -33,6 +33,7 @@ public class BluetoothActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		bma = getApplicationManager();
+		dispositivos = new ArrayList<BluetoothDevice>();
 	}
 
 	public void showMessage(String message) {
@@ -82,7 +83,6 @@ public class BluetoothActivity extends Activity {
 		btArrayAdapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1);
 		bma.setBtArrayAdapter(btArrayAdapter);
-		
 
 	}
 
@@ -98,8 +98,10 @@ public class BluetoothActivity extends Activity {
 			showMessage("Ya se conectó!");
 			bma.setSocket(mmSocket);
 			bma.setConnectionEstablished(true);
+			finish();
 		} catch (IOException e) {
 			showMessage("Algo falló conectándonos al dispositivo! :(");
+			finish();
 			e.printStackTrace();
 		}
 
@@ -138,15 +140,13 @@ public class BluetoothActivity extends Activity {
 	public BluetoothDevice getDispositivo(int index) {
 		return dispositivos.get(index);
 	}
-	
-	public BluetoothDevice getPairedDevice (int index){
-		BluetoothDevice [] devs = new BluetoothDevice[pairedDevices.size()];
+
+	public BluetoothDevice getPairedDevice(int index) {
+		BluetoothDevice[] devs = new BluetoothDevice[pairedDevices.size()];
 		pairedDevices.toArray(devs);
 		BluetoothDevice result = devs[index];
 		return result;
 	}
-	
-	
 
 	private final BroadcastReceiver ActionFoundReceiver = new BroadcastReceiver() {
 
@@ -161,7 +161,9 @@ public class BluetoothActivity extends Activity {
 				btArrayAdapter.add(device.getName() + "\n"
 						+ device.getAddress() + "\n");
 				// + UUID.fromString(device.getAddress()).toString());
-				dispositivos.add(device);
+				if (device != null) {
+					dispositivos.add(device);
+				}
 				btArrayAdapter.notifyDataSetChanged();
 				// UUID.fromString(device.getAddress());
 			}

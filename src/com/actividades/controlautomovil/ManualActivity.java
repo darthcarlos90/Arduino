@@ -23,6 +23,7 @@ public class ManualActivity extends BluetoothActivity implements
 	private BluetoothManagerApplication bma;
 	private Button adelante;
 	private Button atras;
+	private Button stahp;
 
 	private final float NOISE = (float) 2.0;
 
@@ -60,6 +61,15 @@ public class ManualActivity extends BluetoothActivity implements
 					showMessage("No se pudo Mover hacia atras! :(");
 					e.printStackTrace();
 				}
+				
+			}
+		});
+		
+		stahp = (Button) findViewById(R.id.stop_btn);
+		stahp.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				finish();
 				
 			}
 		});
