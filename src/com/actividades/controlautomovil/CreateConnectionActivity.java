@@ -16,7 +16,7 @@ public class CreateConnectionActivity extends BluetoothActivity {
 	private Button buscar;
 	private ArrayList<BluetoothDevice> devices;
 	private ArrayAdapter<String> btArrayAdapter;
-	private BluetoothManagerApplication bma;
+	private CarritoManagerApplication bma;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -23,11 +23,11 @@
 
     <Button
         android:id="@+id/empezarBusqueda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_below="@id/dispositivosPrevios_view"
         android:layout_centerHorizontal="true"
-        android:text="@string/buscar_dispositivos" />
+        android:background="@drawable/buscarbt" />
 
     <ListView
         android:id="@+id/dispositivosEncontrados_lv"

@@ -9,7 +9,7 @@ import android.view.View;
 
 public class MainActivity extends BluetoothActivity {
 
-	private BluetoothManagerApplication bma;
+	private CarritoManagerApplication bma;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,11 @@ public class MainActivity extends BluetoothActivity {
 		case R.id.menu_settings:
 			Intent intent = new Intent(this, CreateConnectionActivity.class);
 			startActivity(intent);
+			break;
+		
+		case R.id.menu_closeConnection:
+			endConnection();
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

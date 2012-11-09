@@ -13,30 +13,6 @@
         android:layout_centerVertical="true"
         android:background="@drawable/stop" />
 
-    <TextView
-        android:id="@+id/estadoX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stop_btn"
-        android:layout_centerHorizontal="true"
-        android:text="@string/estado_del_giroscopio" />
-
-    <TextView
-        android:id="@+id/estadoY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/estadoX"
-        android:layout_centerHorizontal="true"
-        android:text="@string/estado_del_giroscopio" />
-
-    <TextView
-        android:id="@+id/estadoZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/estadoY"
-        android:layout_centerHorizontal="true"
-        android:text="@string/estado_del_giroscopio" />
-
     <RelativeLayout
         android:id="@+id/controles_movimiento"
         android:layout_width="wrap_content"
@@ -98,20 +74,6 @@
             android:layout_toRightOf="@id/abre_pinza_btn"
             android:background="@drawable/cerrarpinza" />
 
-        <Button
-            android:id="@+id/baja_pinza_btn"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_below="@id/abre_pinza_btn"
-            android:background="@drawable/bajarpinza" />
-
-        <Button
-            android:id="@+id/subir_pinza_btn"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_below="@id/abre_pinza_btn"
-            android:layout_toRightOf="@id/baja_pinza_btn"
-            android:background="@drawable/subirpinza" />
     </RelativeLayout>
 
 </RelativeLayout>

@@ -26,7 +26,7 @@ public class BluetoothActivity extends Activity {
 	private ArrayAdapter<String> btArrayAdapter;
 	private Intent discoverable;
 	private BluetoothAdapter mBluetoothAdapter;
-	private BluetoothManagerApplication bma;
+	private CarritoManagerApplication bma;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -132,8 +132,8 @@ public class BluetoothActivity extends Activity {
 		}
 	}
 
-	public BluetoothManagerApplication getApplicationManager() {
-		BluetoothManagerApplication bma = (BluetoothManagerApplication) getApplication();
+	public CarritoManagerApplication getApplicationManager() {
+		CarritoManagerApplication bma = (CarritoManagerApplication) getApplication();
 		return bma;
 	}
 
@@ -146,6 +146,16 @@ public class BluetoothActivity extends Activity {
 		pairedDevices.toArray(devs);
 		BluetoothDevice result = devs[index];
 		return result;
+	}
+
+	public void endConnection() {
+		try {
+			bma.getSocket().close();
+			bma.setConnectionEstablished(false);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private final BroadcastReceiver ActionFoundReceiver = new BroadcastReceiver() {

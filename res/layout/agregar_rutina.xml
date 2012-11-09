@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/agregar_rutina_btn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/save2" />
+
+    <RelativeLayout
+        android:id="@+id/agregar_movimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <Button
+            android:id="@+id/agregar_adelante_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/adelate" />
+
+        <Button
+            android:id="@+id/agregar_izq_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/agregar_adelante_btn"
+            android:background="@drawable/izquierda" />
+
+        <Button
+            android:id="@+id/agregar_der_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/agregar_adelante_btn"
+            android:layout_toRightOf="@id/agregar_izq_btn"
+            android:background="@drawable/derecha" />
+
+        <Button
+            android:id="@+id/agregar_atras_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/agregar_izq_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/atras" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/agregar_pinza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <Button
+            android:id="@+id/agregar_abre_pinza_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/abrirpinza" />
+
+        <Button
+            android:id="@+id/agregar_cerrar_pinza_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/agregar_abre_pinza_btn"
+            android:background="@drawable/cerrarpinza" />
+    </RelativeLayout>
+
+</RelativeLayout>

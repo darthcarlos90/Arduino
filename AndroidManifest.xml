@@ -11,8 +11,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
-        android:name=".BluetoothManagerApplication"
-        android:icon="@drawable/ic_launcher"
+        android:name=".CarritoManagerApplication"
+        android:icon="@drawable/aplicacion2"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -31,16 +31,17 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".BluetoothActivity"
-            android:label="@string/title_activity_main"
-            />
+            android:label="@string/title_activity_main" />
         <activity
             android:name=".CreateConnectionActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".AutomaticoActivity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AgregarRutinaActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

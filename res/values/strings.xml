@@ -19,7 +19,9 @@
     <string name="dispositivos_previamente_conectados">Dispositivos Previamente Conectados: </string>
     <string name="no_hay_dispositivos_previos">No hay Dispositivos Previos</string>
     <string name="buscar_dispositivos">Buscar Dispositivos</string>
-    <string name="ejecutar_rutina_por_default">Ejecutar Rutina Por Default</string>
+    <string name="ejecutar_rutina_por_default">Ejecutar Rutina por Default</string>
     <string name="nueva_rutina">Nueva Rutina</string>
+    <string name="play">play</string>
+    <string name="cerrar_conexi_n">Cerrar conexión</string>
 
 </resources>
