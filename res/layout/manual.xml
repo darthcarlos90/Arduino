@@ -34,23 +34,34 @@
             android:layout_height="60dp"
             android:layout_below="@id/adelante_btn"
             android:background="@drawable/izquierda" />
+          <ImageView
+            android:id = "@+id/blank"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/adelante_btn"
+            android:layout_toRightOf="@id/izq_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/blank"
+            android:contentDescription="@string/cD_blank"
+            />
 
         <Button
             android:id="@+id/der_btn"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_below="@id/adelante_btn"
-            android:layout_toRightOf="@id/izq_btn"
+            android:layout_toRightOf="@id/blank"
             android:background="@drawable/derecha" />
 
         <Button
             android:id="@+id/atras_btn"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_below="@id/izq_btn"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/blank"
+            android:layout_toLeftOf="@+id/der_btn"
             android:background="@drawable/atras" />
+      
     </RelativeLayout>
 
     <RelativeLayout

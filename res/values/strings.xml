@@ -23,5 +23,6 @@
     <string name="nueva_rutina">Nueva Rutina</string>
     <string name="play">play</string>
     <string name="cerrar_conexi_n">Cerrar conexión</string>
+    <string name="cD_blank">Imagen para rellenar el espacio</string>
 
 </resources>
