@@ -23,6 +23,7 @@ public class ManualActivity extends BluetoothActivity {
 	private Button der;
 	private Button abrir;
 	private Button cerrar;
+	private boolean hayPinzas;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class ManualActivity extends BluetoothActivity {
 
 	private void setupViews() {
 		bma = getApplicationManager();
+		hayPinzas = bma.tienePinzas();
 		adelante = (Button) findViewById(R.id.adelante_btn);
 
 		adelante.setOnTouchListener(new View.OnTouchListener() {
@@ -105,6 +107,7 @@ public class ManualActivity extends BluetoothActivity {
 		});
 		
 		abrir = (Button) findViewById(R.id.abre_pinza_btn);
+		
 		abrir.setOnTouchListener(new View.OnTouchListener() {
 			
 			public boolean onTouch(View v, MotionEvent event) {
@@ -119,6 +122,7 @@ public class ManualActivity extends BluetoothActivity {
 		});
 		
 		cerrar = (Button) findViewById(R.id.cerrar_pinza_btn);
+		
 		cerrar.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
@@ -131,6 +135,11 @@ public class ManualActivity extends BluetoothActivity {
 				
 			}
 		});
+		
+		if(hayPinzas == false){
+			abrir.setVisibility(View.GONE);
+			cerrar.setVisibility(View.GONE);
+		}
 
 	}
 

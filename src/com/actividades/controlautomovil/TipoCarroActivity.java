@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class TipoCarroActivity extends Activity {
-	
+
 	private CarritoManagerApplication cma;
 	private Button noPinza;
 	private Button conPinza;
@@ -19,35 +19,34 @@ public class TipoCarroActivity extends Activity {
 		setContentView(R.layout.choose_car);
 		setUpViews();
 	}
-	
-	private void empiezaSiguienteActividad(){
+
+	private void empiezaSiguienteActividad() {
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
 	}
-	
-	private void setUpViews(){
+
+	private void setUpViews() {
 		cma = (CarritoManagerApplication) getApplication();
 		noPinza = (Button) findViewById(R.id.sinPinzas);
 		conPinza = (Button) findViewById(R.id.conPinzas);
 		noPinza.setOnClickListener(new View.OnClickListener() {
-			
+
 			public void onClick(View v) {
 				cma.setPinzas(false);
 				empiezaSiguienteActividad();
-				
+
 			}
 		});
-		
-		noPinza.setOnClickListener(new View.OnClickListener() {
-			
+
+		conPinza.setOnClickListener(new View.OnClickListener() {
+
 			public void onClick(View v) {
-			cma.setPinzas(true);
-			empiezaSiguienteActividad();
-			
-				
+				cma.setPinzas(true);
+				empiezaSiguienteActividad();
+
 			}
 		});
-		
+
 	}
 
 }

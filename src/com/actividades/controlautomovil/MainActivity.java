@@ -6,10 +6,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends BluetoothActivity {
 
 	private CarritoManagerApplication bma;
+	private TextView msjPinzas;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -18,8 +20,22 @@ public class MainActivity extends BluetoothActivity {
 		setup();
 	}
 
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		endConnection();
+	}
+
 	private void setup() {
-		bma = getApplicationManager();
+		bma = (CarritoManagerApplication) getApplication();
+		msjPinzas = (TextView) findViewById(R.id.tipo_carro);
+		boolean hayPinzas = bma.tienePinzas();
+		if(hayPinzas == true){
+			msjPinzas.setText("Carrito 1");
+		}else {
+			msjPinzas.setText("Carrito 2");
+		}
+		
 	}
 
 	public void manual(View v) {
