@@ -24,5 +24,6 @@
     <string name="play">play</string>
     <string name="cerrar_conexi_n">Cerrar conexión</string>
     <string name="cD_blank">Imagen para rellenar el espacio</string>
+    <string name="msj_bienvenida">Bienvenido a la aplicación. Por favor, escoge el tipo de carro que vas a manejar:</string>
 
 </resources>

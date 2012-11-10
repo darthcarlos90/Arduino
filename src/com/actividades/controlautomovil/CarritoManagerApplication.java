@@ -31,6 +31,7 @@ public class CarritoManagerApplication extends Application {
 	public static final String RUTINAS_TABLE = "rutinas";
 	public static final String ID = "id";
 	public static final String RUTINA = "rutina";
+	private boolean pinzas;
 
 	/**
 	 * Método que se hereda onCreate(). Inicializa variables que se pueden usar
@@ -46,6 +47,7 @@ public class CarritoManagerApplication extends Application {
 		connectionEstablished = false;
 		connectedDevice = null;
 		bluetoothSocket = null;
+		pinzas = true;
 	}
 
 	/**
@@ -180,6 +182,14 @@ public class CarritoManagerApplication extends Application {
 
 	public void setPairedDevices(Set<BluetoothDevice> devices) {
 		pairedDevices = devices;
+	}
+	
+	public void setPinzas(boolean pinzas){
+		this.pinzas = pinzas;
+	}
+	
+	public boolean tienePinzas(){
+		return pinzas;
 	}
 
 }
