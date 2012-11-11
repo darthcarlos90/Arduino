@@ -21,7 +21,7 @@ public class AutomaticoActivity extends BluetoothActivity {
 
 	private CarritoManagerApplication cma;
 	private Button playDefault;
-	private static final String RUTINA_DEFAULT = "AAAAAAAAAAAAAAAAAAAABBBBBBBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDIIIIIIIIIIIIIIIIIIIIIIAAAAAAAABBBBBBBBBB";
+	private static final String RUTINA_DEFAULT = "R";
 	private Button agregaRutina;
 	private ListView rutinasLv;
 	private ArrayList<Rutina> rutinas;
