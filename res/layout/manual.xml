@@ -6,12 +6,12 @@
     android:orientation="horizontal" >
 
     <Button
-        android:id="@+id/stop_btn"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
+        android:id="@+id/clackson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/stop" />
+        android:text="@string/clackson" />
 
     <RelativeLayout
         android:id="@+id/controles_movimiento"
@@ -34,17 +34,17 @@
             android:layout_height="60dp"
             android:layout_below="@id/adelante_btn"
             android:background="@drawable/izquierda" />
-          <ImageView
-            android:id = "@+id/blank"
+
+        <ImageView
+            android:id="@+id/blank"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_below="@id/adelante_btn"
-            android:layout_toRightOf="@id/izq_btn"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/izq_btn"
             android:background="@drawable/blank"
-            android:contentDescription="@string/cD_blank"
-            />
+            android:contentDescription="@string/cD_blank" />
 
         <Button
             android:id="@+id/der_btn"
@@ -61,7 +61,6 @@
             android:layout_below="@+id/blank"
             android:layout_toLeftOf="@+id/der_btn"
             android:background="@drawable/atras" />
-      
     </RelativeLayout>
 
     <RelativeLayout
@@ -85,6 +84,12 @@
             android:layout_toRightOf="@id/abre_pinza_btn"
             android:background="@drawable/cerrarpinza" />
 
+        <Button
+            android:id="@+id/stop_btn"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/cerrar_pinza_btn"
+            android:background="@drawable/stop" />
     </RelativeLayout>
 
 </RelativeLayout>

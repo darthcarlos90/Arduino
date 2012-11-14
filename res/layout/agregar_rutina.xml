@@ -32,6 +32,7 @@
             android:layout_height="60dp"
             android:layout_below="@id/agregar_adelante_btn"
             android:background="@drawable/izquierda" />
+
         <ImageView
             android:id="@+id/nada"
             android:layout_width="60dp"
@@ -39,8 +40,7 @@
             android:layout_below="@id/agregar_adelante_btn"
             android:layout_toRightOf="@id/agregar_izq_btn"
             android:background="@drawable/blank"
-            android:contentDescription="@string/cD_blank"
-            />
+            android:contentDescription="@string/cD_blank" />
 
         <Button
             android:id="@+id/agregar_der_btn"
@@ -80,6 +80,14 @@
             android:layout_height="60dp"
             android:layout_toRightOf="@id/agregar_abre_pinza_btn"
             android:background="@drawable/cerrarpinza" />
+
+        <Button
+            android:id="@+id/pito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/agregar_cerrar_pinza_btn"
+            android:text="@string/clackson"
+             />
     </RelativeLayout>
 
 </RelativeLayout>

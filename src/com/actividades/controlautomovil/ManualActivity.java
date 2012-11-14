@@ -2,6 +2,8 @@ package com.actividades.controlautomovil;
 
 import java.io.IOException;
 
+import com.actividades.controlautomovil.BluetoothActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +25,7 @@ public class ManualActivity extends BluetoothActivity {
 	private Button der;
 	private Button abrir;
 	private Button cerrar;
-	private boolean hayPinzas;
+	private Button pito;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,6 @@ public class ManualActivity extends BluetoothActivity {
 
 	private void setupViews() {
 		bma = getApplicationManager();
-		hayPinzas = bma.tienePinzas();
 		adelante = (Button) findViewById(R.id.adelante_btn);
 
 		adelante.setOnTouchListener(new View.OnTouchListener() {
@@ -105,11 +106,11 @@ public class ManualActivity extends BluetoothActivity {
 				return true;
 			}
 		});
-		
+
 		abrir = (Button) findViewById(R.id.abre_pinza_btn);
-		
+
 		abrir.setOnTouchListener(new View.OnTouchListener() {
-			
+
 			public boolean onTouch(View v, MotionEvent event) {
 				try {
 					bma.getSocket().getOutputStream().write('O');
@@ -120,11 +121,11 @@ public class ManualActivity extends BluetoothActivity {
 				return false;
 			}
 		});
-		
+
 		cerrar = (Button) findViewById(R.id.cerrar_pinza_btn);
-		
+
 		cerrar.setOnClickListener(new View.OnClickListener() {
-			
+
 			public void onClick(View v) {
 				try {
 					bma.getSocket().getOutputStream().write('C');
@@ -132,14 +133,23 @@ public class ManualActivity extends BluetoothActivity {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
+
 			}
 		});
 		
-		if(hayPinzas == false){
-			abrir.setVisibility(View.GONE);
-			cerrar.setVisibility(View.GONE);
-		}
+		pito = (Button) findViewById(R.id.clackson);
+		pito.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				try {
+					bma.getSocket().getOutputStream().write('P');
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
 
 	}
 

@@ -2,6 +2,8 @@ package com.actividades.controlautomovil;
 
 import java.util.ArrayList;
 
+import com.actividades.controlautomovil.BluetoothActivity;
+
 import android.bluetooth.BluetoothDevice;
 import android.os.Bundle;
 import android.view.View;
@@ -61,10 +63,7 @@ public class CreateConnectionActivity extends BluetoothActivity {
 					long arg3) {
 
 				selectConnection(getDispositivo(arg2));
-
 			}
-
 		});
-
 	}
 }

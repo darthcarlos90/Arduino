@@ -38,51 +38,48 @@ public final class R {
         public static final int stop=0x7f020013;
     }
     public static final class id {
-        public static final int abre_pinza_btn=0x7f08001f;
+        public static final int abre_pinza_btn=0x7f08001c;
         public static final int add_rutina=0x7f08000e;
-        public static final int adelante_btn=0x7f080019;
-        public static final int agregar_abre_pinza_btn=0x7f08000b;
-        public static final int agregar_adelante_btn=0x7f080005;
-        public static final int agregar_atras_btn=0x7f080009;
-        public static final int agregar_cerrar_pinza_btn=0x7f08000c;
-        public static final int agregar_der_btn=0x7f080008;
-        public static final int agregar_izq_btn=0x7f080006;
-        public static final int agregar_movimiento=0x7f080004;
-        public static final int agregar_pinza=0x7f08000a;
-        public static final int agregar_rutina_btn=0x7f080003;
-        public static final int atras_btn=0x7f08001d;
-        public static final int blank=0x7f08001b;
+        public static final int adelante_btn=0x7f080016;
+        public static final int agregar_abre_pinza_btn=0x7f08000a;
+        public static final int agregar_adelante_btn=0x7f080004;
+        public static final int agregar_atras_btn=0x7f080008;
+        public static final int agregar_cerrar_pinza_btn=0x7f08000b;
+        public static final int agregar_der_btn=0x7f080007;
+        public static final int agregar_izq_btn=0x7f080005;
+        public static final int agregar_movimiento=0x7f080003;
+        public static final int agregar_pinza=0x7f080009;
+        public static final int agregar_rutina_btn=0x7f080002;
+        public static final int atras_btn=0x7f08001a;
+        public static final int blank=0x7f080018;
         public static final int boton_auto=0x7f080001;
         public static final int boton_manual=0x7f080000;
-        public static final int canvas_view=0x7f080021;
-        public static final int cerrar_pinza_btn=0x7f080020;
-        public static final int conPinzas=0x7f080015;
-        public static final int controles_movimiento=0x7f080018;
-        public static final int controles_pinza=0x7f08001e;
-        public static final int der_btn=0x7f08001c;
+        public static final int canvas_view=0x7f08001f;
+        public static final int cerrar_pinza_btn=0x7f08001d;
+        public static final int clackson=0x7f080014;
+        public static final int controles_movimiento=0x7f080015;
+        public static final int controles_pinza=0x7f08001b;
+        public static final int der_btn=0x7f080019;
         public static final int dispositivosEncontrados_lv=0x7f080013;
         public static final int dispositivosPrevios_txv=0x7f080010;
         public static final int dispositivosPrevios_view=0x7f080011;
         public static final int ejecutar_rutina_default=0x7f08000d;
         public static final int empezarBusqueda=0x7f080012;
-        public static final int izq_btn=0x7f08001a;
-        public static final int menu_closeConnection=0x7f080023;
-        public static final int menu_settings=0x7f080022;
-        public static final int msj_principal=0x7f080014;
-        public static final int nada=0x7f080007;
+        public static final int izq_btn=0x7f080017;
+        public static final int menu_closeConnection=0x7f080021;
+        public static final int menu_settings=0x7f080020;
+        public static final int nada=0x7f080006;
+        public static final int pito=0x7f08000c;
         public static final int rutinas=0x7f08000f;
-        public static final int sinPinzas=0x7f080016;
-        public static final int stop_btn=0x7f080017;
-        public static final int tipo_carro=0x7f080002;
+        public static final int stop_btn=0x7f08001e;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int agregar_rutina=0x7f030001;
         public static final int automatico=0x7f030002;
         public static final int bluetooth_layout=0x7f030003;
-        public static final int choose_car=0x7f030004;
-        public static final int manual=0x7f030005;
-        public static final int pruebacirculo=0x7f030006;
+        public static final int manual=0x7f030004;
+        public static final int pruebacirculo=0x7f030005;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
@@ -98,6 +95,7 @@ public final class R {
         public static final int cD_blank=0x7f050017;
         public static final int cerrar_conexi_n=0x7f050016;
         public static final int cerrar_pinza=0x7f050009;
+        public static final int clackson=0x7f050019;
         public static final int dispositivos_previamente_conectados=0x7f050010;
         public static final int ejecutar_rutina_por_default=0x7f050013;
         public static final int estado_del_giroscopio=0x7f05000d;

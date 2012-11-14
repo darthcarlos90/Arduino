@@ -17,8 +17,8 @@ public class AgregarRutinaActivity extends Activity {
 	private Button izq;
 	private Button abrir;
 	private Button cerrar;
+	private Button pito;
 	private CarritoManagerApplication cma;
-	private boolean hayPinzas;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,6 @@ public class AgregarRutinaActivity extends Activity {
 	}
 
 	private void setupViews() {
-		hayPinzas = cma.tienePinzas();
 		rutina = new String();
 		add = (Button) findViewById(R.id.agregar_rutina_btn);
 		add.setOnClickListener(new View.OnClickListener() {
@@ -71,11 +70,29 @@ public class AgregarRutinaActivity extends Activity {
 		});
 		abrir = (Button) findViewById(R.id.agregar_abre_pinza_btn);
 		cerrar = (Button) findViewById(R.id.agregar_cerrar_pinza_btn);
+		abrir.setOnClickListener(new View.OnClickListener() {
 
-		if (hayPinzas == false) {
-			abrir.setVisibility(View.GONE);
-			cerrar.setVisibility(View.GONE);
-		}
+			public void onClick(View v) {
+				rutina += "A";
+
+			}
+		});
+
+		cerrar.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				rutina += "C";
+
+			}
+		});
+
+		pito = (Button) findViewById(R.id.pito);
+		pito.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				rutina += "P";
+			}
+		});
 
 	}
 
