@@ -27,15 +27,16 @@ public final class R {
         public static final int blank=0x7f020008;
         public static final int buscarbt=0x7f020009;
         public static final int cerrarpinza=0x7f02000a;
-        public static final int delete=0x7f02000b;
-        public static final int derecha=0x7f02000c;
-        public static final int ic_action_search=0x7f02000d;
-        public static final int ic_launcher=0x7f02000e;
-        public static final int izquierda=0x7f02000f;
-        public static final int manual=0x7f020010;
-        public static final int play=0x7f020011;
-        public static final int save2=0x7f020012;
-        public static final int stop=0x7f020013;
+        public static final int claxon=0x7f02000b;
+        public static final int delete=0x7f02000c;
+        public static final int derecha=0x7f02000d;
+        public static final int ic_action_search=0x7f02000e;
+        public static final int ic_launcher=0x7f02000f;
+        public static final int izquierda=0x7f020010;
+        public static final int manual=0x7f020011;
+        public static final int play=0x7f020012;
+        public static final int save2=0x7f020013;
+        public static final int stop=0x7f020014;
     }
     public static final class id {
         public static final int abre_pinza_btn=0x7f08001c;

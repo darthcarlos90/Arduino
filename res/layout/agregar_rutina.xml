@@ -83,10 +83,10 @@
 
         <Button
             android:id="@+id/pito"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_below="@id/agregar_cerrar_pinza_btn"
-            android:text="@string/clackson"
+            android:background="@drawable/claxon"
              />
     </RelativeLayout>
 
