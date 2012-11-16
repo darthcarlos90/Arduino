@@ -23,6 +23,21 @@
         android:onClick="automatico"
         tools:context=".MainActivity" />
     
-    
+    <TextView 
+        android:id="@+id/damiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/ramiro"
+        />
+    <TextView 
+        android:id="@+id/tirado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/damiro"
+        android:text="@string/tirado"
+        />
 
 </RelativeLayout>

@@ -125,7 +125,7 @@ public class AutomaticoActivity extends BluetoothActivity {
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.activity_main, menu);
+		inflater.inflate(R.menu.menu_auto, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -139,6 +139,11 @@ public class AutomaticoActivity extends BluetoothActivity {
 		case R.id.menu_closeConnection:
 			endConnection();
 			finish();
+			break;
+		
+		case R.id.goto_manual:
+			Intent intent2 = new Intent(this, ManualActivity.class);
+			startActivity(intent2);
 			break;
 		}
 		return super.onOptionsItemSelected(item);

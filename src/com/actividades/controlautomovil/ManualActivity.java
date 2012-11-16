@@ -136,10 +136,10 @@ public class ManualActivity extends BluetoothActivity {
 
 			}
 		});
-		
+
 		pito = (Button) findViewById(R.id.clackson);
 		pito.setOnClickListener(new View.OnClickListener() {
-			
+
 			public void onClick(View v) {
 				try {
 					bma.getSocket().getOutputStream().write('P');
@@ -147,7 +147,7 @@ public class ManualActivity extends BluetoothActivity {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
+
 			}
 		});
 
@@ -162,7 +162,7 @@ public class ManualActivity extends BluetoothActivity {
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.activity_main, menu);
+		inflater.inflate(R.menu.menu_manual, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -177,6 +177,12 @@ public class ManualActivity extends BluetoothActivity {
 			endConnection();
 			finish();
 			break;
+
+		case R.id.goto_auto:
+			Intent intent2 = new Intent(this, AutomaticoActivity.class);
+			startActivity(intent2);
+			break;
+
 		}
 		return super.onOptionsItemSelected(item);
 	}
