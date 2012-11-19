@@ -4,6 +4,13 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * Clase que se encarga de la construcción de la base de datos, así como de su
+ * modificación y destrucción.
+ * 
+ * @author Carlos Tirado
+ * 
+ */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 	// Creación de variables para la base de datos
@@ -31,7 +38,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase arg0) {
 		dropAndCreate(arg0);
-
 	}
 
 	/**

@@ -15,6 +15,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+/**
+ * Clase que representa el control manual.
+ * 
+ * @author Carlos Tirado
+ * 
+ */
 public class ManualActivity extends BluetoothActivity {
 
 	private CarritoManagerApplication bma;
@@ -27,18 +33,27 @@ public class ManualActivity extends BluetoothActivity {
 	private Button cerrar;
 	private Button pito;
 
+	/**
+	 * Método que se corre en cuando se crea la actividad.
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.manual);
 		setupViews();
-
 	}
 
+	/**
+	 * Método que carga los elementos de la interfaz.
+	 */
 	private void setupViews() {
 		bma = getApplicationManager();
-		adelante = (Button) findViewById(R.id.adelante_btn);
 
+		/*
+		 * Botón adelante, manda un mensaje de que el carro se mueva hacia
+		 * adelante al tocar el botón.
+		 */
+		adelante = (Button) findViewById(R.id.adelante_btn);
 		adelante.setOnTouchListener(new View.OnTouchListener() {
 
 			public boolean onTouch(View v, MotionEvent event) {
@@ -52,8 +67,11 @@ public class ManualActivity extends BluetoothActivity {
 			}
 		});
 
+		/*
+		 * Botón atras, manda una señal de que el carrito debe de moverse hacia
+		 * atrás.
+		 */
 		atras = (Button) findViewById(R.id.atras_btn);
-
 		atras.setOnTouchListener(new View.OnTouchListener() {
 
 			public boolean onTouch(View v, MotionEvent event) {
@@ -67,6 +85,10 @@ public class ManualActivity extends BluetoothActivity {
 			}
 		});
 
+		/*
+		 * Botón de parar, cierra la conexión y termina la actividad cuando se
+		 * oprime el botón.
+		 */
 		stahp = (Button) findViewById(R.id.stop_btn);
 		stahp.setOnClickListener(new View.OnClickListener() {
 
@@ -77,8 +99,11 @@ public class ManualActivity extends BluetoothActivity {
 			}
 		});
 
+		/*
+		 * Botón de izquierda, manda una señal al carrito de que se mueva hacia
+		 * la izquierda.
+		 */
 		izq = (Button) findViewById(R.id.izq_btn);
-
 		izq.setOnTouchListener(new View.OnTouchListener() {
 
 			public boolean onTouch(View v, MotionEvent event) {
@@ -92,8 +117,11 @@ public class ManualActivity extends BluetoothActivity {
 			}
 		});
 
+		/*
+		 * Botón derecha, manda una señal al carrito de que se mueva a la
+		 * derecha.
+		 */
 		der = (Button) findViewById(R.id.der_btn);
-
 		der.setOnTouchListener(new View.OnTouchListener() {
 
 			public boolean onTouch(View v, MotionEvent event) {
@@ -107,52 +135,58 @@ public class ManualActivity extends BluetoothActivity {
 			}
 		});
 
+		/* Botón abrir pinza, manda una señal al carrito de que abra la pinza. */
 		abrir = (Button) findViewById(R.id.abre_pinza_btn);
-
 		abrir.setOnTouchListener(new View.OnTouchListener() {
 
 			public boolean onTouch(View v, MotionEvent event) {
 				try {
 					bma.getSocket().getOutputStream().write('O');
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				return false;
 			}
 		});
 
+		/*
+		 * Botón de cerrar pinza, el encargado de mandar una señal al carrito de
+		 * que cierre la pinza.
+		 */
 		cerrar = (Button) findViewById(R.id.cerrar_pinza_btn);
-
 		cerrar.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 				try {
 					bma.getSocket().getOutputStream().write('C');
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
 			}
 		});
 
+		/*
+		 * Botón de claxon, el encargado de hacer que el carrito toque el
+		 * claxon.
+		 */
 		pito = (Button) findViewById(R.id.clackson);
-		pito.setOnClickListener(new View.OnClickListener() {
+		pito.setOnTouchListener(new View.OnTouchListener() {
 
-			public void onClick(View v) {
+			public boolean onTouch(View v, MotionEvent event) {
 				try {
 					bma.getSocket().getOutputStream().write('P');
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
+				return false;
 			}
 		});
 
 	}
 
+	/**
+	 * Método que muestra un mensaje al usuario.
+	 */
 	public void showMessage(String message) {
 		Context context = getApplicationContext();
 		int duration = Toast.LENGTH_SHORT;
